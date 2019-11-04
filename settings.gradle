@@ -1,0 +1,2 @@
+include ':app', ':basicfunction'
+rootProject.name='BasicLibrary'
