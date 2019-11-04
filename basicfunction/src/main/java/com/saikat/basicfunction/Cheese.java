@@ -5,7 +5,13 @@ import android.widget.Toast;
 
 public class Cheese {
 
-    public static void showToast(Context context, String message){
+    Context context;
+
+    public Cheese(Context context){
+        this.context = context;
+    }
+
+    public void showToast(String message){
         Toast.makeText(context, message, Toast.LENGTH_LONG).show();
     }
 
