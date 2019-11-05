@@ -48,20 +48,20 @@ public class Cheese {
     /*
     * SET FULLSCREEN
     * */
-    public void setFullScreen() {
+    /*public void setFullScreen() {
         Activity activity = ((Activity) context);
         activity.requestWindowFeature(Window.FEATURE_NO_TITLE);
         activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-    }
+    }*/
 
     /*
     * CHECK IF NETWORK AVAILABLE
     * */
-    /*public boolean isNetworkAvailable() {
+    public boolean isNetworkAvailable() {
         ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo info = manager.getActiveNetworkInfo();
         return (info != null && info.isConnected());
-    }*/
+    }
 
     /*
     * LOG MESSAGE
