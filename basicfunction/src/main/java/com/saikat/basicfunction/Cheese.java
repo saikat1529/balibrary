@@ -1,7 +1,13 @@
 package com.saikat.basicfunction;
 
+import android.app.Activity;
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 public class Cheese {
@@ -37,6 +43,33 @@ public class Cheese {
             views[i].setVisibility(View.GONE);
         }
         view.setVisibility(View.VISIBLE);
+    }
+
+    /*
+    * SET FULLSCREEN
+    * */
+    public void setFullScreen() {
+        Activity activity = ((Activity) context);
+        activity.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    }
+
+    /*
+    * CHECK IF NETWORK AVAILABLE
+    * */
+    public boolean isNetworkAvailable() {
+        ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo info = manager.getActiveNetworkInfo();
+        return (info != null && info.isConnected());
+    }
+
+    /*
+    * LOG MESSAGE
+    * @param
+    *  - String message
+    * */
+    public void logger(String message) {
+        Log.d(context.getPackageName()+"_DEBUG", message);
     }
 
 }
